@@ -1,0 +1,45 @@
+Algoritmo promedio_ventas_vialidad
+	Definir meses, umbral, promedio, suma, ventas_mes, i, ventas Como Real;
+	Definir viable Como Logico;
+	
+	Escribir 'Bienvenido/a, Por favor ingrese el número de meses que desea analizar (entre 1 y 12):';
+	Leer meses;
+	Mientras meses<1 O meses>12 Hacer
+		Escribir 'Número inválido. Por favor ingrese un numero entre 1 y 12:';
+		Leer meses;
+	FinMientras
+	
+	ventas_mes <- 0;
+	promedio <- 0;
+	
+	Para i<-1 Hasta meses Con Paso 1 Hacer
+		Escribir 'Por favor ingrese el monto de las ventas del mes ', i, ':';
+		Leer ventas;
+		Mientras ventas<0 Hacer
+			Escribir 'Monto inválido. Ingrese un número positivo:';
+			Leer ventas;
+		FinMientras
+		ventas_mes <- ventas_mes+ventas;
+	FinPara
+	
+	promedio <- ventas_mes/meses;
+	Escribir 'Por favor ingrese el umbral de vialidad (valor mínimo del promedio de ventas para que la actividad sea rentable):';
+	Leer umbral;
+	Mientras umbral<0 Hacer
+		Escribir 'Umbral inválido. Ingrese un número positivo:';
+		Leer umbral;
+	FinMientras
+	
+	Si promedio>=umbral Entonces
+		viable <- Verdadero;
+	SiNo
+		viable <- Falso;
+	FinSi
+	
+	Escribir 'El promedio de ventas es: ', promedio
+	Si viable=Verdadero Entonces;
+		Escribir 'Felicitaciones!! su actividad comercial es viable.'
+	SiNo
+		Escribir 'Lo Sentimos esta actividad no es viable.';
+	FinSi
+FinAlgoritmo

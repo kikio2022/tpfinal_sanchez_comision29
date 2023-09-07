@@ -1,0 +1,12 @@
+Algoritmo vialidad
+	Definir costos_fijos, costos_variables, ventas, umbral Como Real
+	Escribir 'Bienvenido/a ingrese los costos fijos de su actividad:'
+	Leer costos_fijos
+	Escribir 'Bienvenido/a ingrese los costos variables de su actividad:'
+	Leer costos_variables
+	Escribir 'Bienvenido/a ingrese las ventas totales de su actividad:'
+	Leer ventas
+	// Cálculo el umbral de viabilidad
+	umbral <- costos_fijos/(1-costos_variables/ventas)
+	Escribir 'El umbral de viabilidad de su actividad es: ', umbral
+FinAlgoritmo
